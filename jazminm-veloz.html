@@ -1,0 +1,71 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-dropdown/iron-dropdown.html">
+<link rel="import" href="../auto-check-element/auto-check-element.html">
+<link rel="import" href="../time-elements/time-elements.html">
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+
+<dom-module id="jazminm-veloz">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      #container {
+        display: inline-block;
+      }
+
+      iron-dropdown {
+        border: 1px solid gray;
+        background: white;
+        font-size: 2em;
+      }
+      auto-check {display: block;}
+    </style>
+ 
+<paper-card heading="{{title}}">
+  <paper-input label="inputLabel" value="{{inputValue}}" always-float-label label="Escribe aqui"></paper-input>
+  <paper-button>{{buttonValue}}</paper-button>
+</paper-card>
+  
+  
+</template>
+  <script>
+  
+    /**
+     * `jazminm-veloz`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class JazminmVeloz extends Polymer.Element {
+      static get is() { return 'jazminm-veloz'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'jazminm-veloz'
+          },
+          buttonValue: {
+            type: String,
+            value: 'button'
+          },
+          title: {
+            type: String,
+            value: 'jazmin'
+          }
+        };
+        
+      }
+      open(){
+        this.$.dropdown.open();
+      }
+    }
+
+    window.customElements.define(JazminmVeloz.is, JazminmVeloz);
+  </script>
+</dom-module>
